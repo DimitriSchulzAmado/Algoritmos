@@ -1,2 +1,2 @@
-# Algorítmos III
+# Algoritmos III
  Inatel - Algorítmos III (Árvores)
