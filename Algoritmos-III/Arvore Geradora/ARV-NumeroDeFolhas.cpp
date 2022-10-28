@@ -78,7 +78,7 @@ int main()
     n = contaNos(arvore);
     cout << n << endl;
 
-    // Destroi os nós por completo
+    // Apaga todos os nos e a propria arvore
     tDestruir(arvore);
 
     return 0;

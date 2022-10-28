@@ -64,5 +64,8 @@ int main()
     }
     emOrdem(arvore);
 
+    // Apaga todos os nos e a propria arvore
+    tDestruir(arvore);
+
     return 0;
 }

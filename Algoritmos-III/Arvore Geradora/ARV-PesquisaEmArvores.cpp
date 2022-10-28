@@ -65,5 +65,9 @@ int main
             cout << "Encontrado" << endl;
         else
             cout << "Nao encontrado" << endl;
+
+    // Apaga todos os nos e a propria arvore
+    tDestruir(arvore);
+    
     return 0;
 }

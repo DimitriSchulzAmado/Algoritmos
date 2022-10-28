@@ -74,7 +74,7 @@ int main()
     cout << fixed << setprecision(2);
     cout << "Media: " << soma / i << endl;
 
-    // Destroi os nós por completo
+    // Apaga todos os nos e a propria arvore
     tDestruir(arvore);
 
     return 0;

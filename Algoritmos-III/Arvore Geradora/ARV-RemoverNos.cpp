@@ -137,7 +137,9 @@ int main()
 
   // SAIDA
   emOrdem(arvore);
-  tDestruir(arvore);
+
+  // Apaga todos os nos e a propria arvore
+    tDestruir(arvore);
 
   return 0;
 }

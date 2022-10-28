@@ -92,5 +92,8 @@ int main()
     // MOSTRANDO O MENOR E MAIOR VALOR RESPECTIVAMENTE
     cout << menor_no(arvore) << " e " << maior_no(arvore) << endl;
 
+    // Apaga todos os nos e a propria arvore
+    tDestruir(arvore);
+    
     return 0;
 }

@@ -80,8 +80,8 @@ int main()
     // Soma dos valores percorridos em nivel
     cout << soma << endl;
     
-    // Deletando a arvore por completo
-    tDestruir(tree);
+    // Apaga todos os nos e a propria arvore
+    tDestruir(arvore);
 
     return 0;
 }
