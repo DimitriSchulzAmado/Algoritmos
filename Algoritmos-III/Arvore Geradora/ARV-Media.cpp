@@ -74,6 +74,9 @@ int main()
     cout << fixed << setprecision(2);
     cout << "Media: " << soma / i << endl;
 
+    // Destroi os nós por completo
+    tDestruir(arvore);
+
     return 0;
 }
 

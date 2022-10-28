@@ -33,7 +33,7 @@ void emOrdem(treenodeptr arvore)
     if(arvore != NULL)
     {
         emOrdem(arvore->dir);
-        cout << arvore->info << endl;
+        cout <<
         emOrdem(arvore->esq);
     }
 }

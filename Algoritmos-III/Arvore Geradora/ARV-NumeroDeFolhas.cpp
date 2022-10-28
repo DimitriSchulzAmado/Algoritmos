@@ -78,5 +78,8 @@ int main()
     n = contaNos(arvore);
     cout << n << endl;
 
+    // Destroi os nós por completo
+    tDestruir(arvore);
+
     return 0;
 }
