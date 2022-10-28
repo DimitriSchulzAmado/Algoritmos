@@ -144,7 +144,7 @@ bool cmp(ponto a,ponto b)
 // funcao para ordenar os pontos de acordo com o angulo formado com a horizontal
 void ordena_pelo_angulo(ponto p[],int n)
 {
-	ponto pivot; // ser� o ponto mais abaixo
+	ponto pivot; //ponto mais abaixo e mais a esquerda em relação a "x e y"
 	int pos_pivot;
 	// encontro o ponto mais abaixo para ser o pivot
 	pivot = p[0];
@@ -163,7 +163,7 @@ void ordena_pelo_angulo(ponto p[],int n)
 		}
 	}
 	
-	// coloca o pivot na posicao 0 do vetor
+	// coloca o pivot na posicao 0 do vetor (posicao zero de um grafico X e Y)
 	p[pos_pivot]= p[0];
 	p[0] = pivot;
 	
@@ -175,7 +175,7 @@ void ordena_pelo_angulo(ponto p[],int n)
 	}
 	
 	// ordenacao
-	sort(p + 1, p + n,cmp);
+	sort(p + 1, p + n,cmp); 
 	
 	// desloca os pontos de volta a posicao original
 	for(int i = 0;i < n;i++)
