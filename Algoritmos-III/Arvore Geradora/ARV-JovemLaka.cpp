@@ -21,9 +21,9 @@ void tInsere(treenodeptr &p, int x)
         p->esq = NULL;
         p->dir = NULL;
     }
-    else if (x < p->info) // insere na subarvore esquerda
+    else if (x < p->info) // insert in the left subtree
         tInsere(p->esq, x);
-    else // insere na subarvore direita
+    else // insert in the right subtree
         tInsere(p->dir, x);
 }
 
@@ -60,7 +60,7 @@ void posOrdem(treenodeptr tree, int pos[], int &k)
     }
 }
 
-// DELETA A ARVORE POR INTEIRO
+// DELETE ALL TREE
 void tDestruir(treenodeptr &tree)
 {
     if (tree != NULL)

@@ -42,7 +42,7 @@ void PreOrdem (treenodeptr arvore, int &maior, int &menor)
 }
 
 // MAIOR NO DA ARVORE
-int maior_no(treenodeptr arvore)
+int maior(treenodeptr arvore)
 {
     int maior = -10000;
     int menor = 90000;
@@ -52,7 +52,7 @@ int maior_no(treenodeptr arvore)
 }
 
 // MENOR NO DA ARVORE
-int menor_no(treenodeptr arvore)
+int menor(treenodeptr arvore)
 {
     int maior = -10000;
     int menor = 90000;
@@ -77,8 +77,8 @@ int main()
 {
     treenodeptr arvore = NULL; // armazena os numeros
 
-    int maior; // maior valor
-    int menor; // menor valor
+    int maior_no; // maior valor
+    int menor_no; // menor valor
     int x = 0; // var aux para leitura de dados
 
     // Entrada
@@ -90,7 +90,7 @@ int main()
     }
     
     // MOSTRANDO O MENOR E MAIOR VALOR RESPECTIVAMENTE
-    cout << menor_no(arvore) << " e " << maior_no(arvore) << endl;
+    cout << menor(arvore) << " e " << maior(arvore) << endl;
 
     // Apaga todos os nos e a propria arvore
     tDestruir(arvore);

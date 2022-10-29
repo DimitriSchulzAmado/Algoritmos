@@ -40,6 +40,18 @@ treenodeptr tPesq(treenodeptr p, int x)
         return tPesq(p->dir, x);
 }
 
+// DELETA A ARVORE POR INTEIRO
+void tDestruir(treenodeptr &arvore)
+{
+    if (arvore != NULL)
+    {
+        tDestruir(arvore->esq);
+        tDestruir(arvore->dir);
+        delete arvore;
+    }
+    arvore = NULL;
+}
+
 int main
 {
     treenodeptr arvore = NULL; // ponteiro para a raiz da árvore
@@ -68,6 +80,6 @@ int main
 
     // Apaga todos os nos e a propria arvore
     tDestruir(arvore);
-    
+
     return 0;
 }

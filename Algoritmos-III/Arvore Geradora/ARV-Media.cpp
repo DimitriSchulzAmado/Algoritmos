@@ -28,6 +28,7 @@ void tInsere(treenodeptr &p, int x)
         tInsere(p->dir, x);
 }
 
+// SOMA DOS NOS
 void PreOrdem (treenodeptr arvore, double &cont, double &i)
 {
 	if (arvore != NULL)
@@ -37,6 +38,18 @@ void PreOrdem (treenodeptr arvore, double &cont, double &i)
 		PreOrdem(arvore->esq, cont, i);
 		PreOrdem(arvore->dir, cont, i);
 	}
+}
+
+// MEDIA
+float media(treenodeptr arvore)
+{
+    double media = 0; // media dos valores da arv
+    double sum = 0; // soma dos nos
+    double i; // contador de nos
+
+    PreOrdem(arvore, sum, i);
+    media = sum / i;
+    return media;
 }
 
 // DELETA A ARVORE POR INTEIRO
@@ -56,6 +69,7 @@ int main()
     treenodeptr arvore = NULL; // ponteiro para a raiz da árvore
 
     double soma = 0; // soma de todos os valores da arv
+    double media_s;
     double i = 0;    // conta a quantidade de nós para a média
     int x = 0;       // Valores dos nós
 
@@ -66,17 +80,14 @@ int main()
         if (x != -1)
             tInsere(arvore,x);
     }
-  
-    // Soma dos valores da arvore
-    PreOrdem(arvore, soma, i);
 
     //* SAIDA
     cout << fixed << setprecision(2);
-    cout << "Media: " << soma / i << endl;
+    media_s = media(arvore);
+    cout << "Media: " << media_s << endl;
 
     // Apaga todos os nos e a propria arvore
     tDestruir(arvore);
 
     return 0;
 }
-
