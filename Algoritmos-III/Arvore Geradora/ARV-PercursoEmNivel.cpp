@@ -64,19 +64,22 @@ void posOrdem(treenodeptr arvore)
 void emNivel(treenodeptr t)
 {
     treenodeptr n;
-    list<treenodeptr> q;
+    list<treenodeptr> q; //ponteiro que vai apontar pro valor a ser adicionado
 
+    // se t não estiver vazio
     if (t != NULL)
     {
-        q.push_back(t);
-        while (!q.empty())
+        q.push_back(t); // coloca 't' em 'q'
+
+        // enquanto a fila não estiver vazia
+        while (!q.empty()) 
         {
-            n = *q.begin();
-            q.pop_front();
+            n = *q.begin(); // n aponta pra onde q esta apontando
+            q.pop_front(); // Tira o primeiro nó da lista
             if (n->esq != NULL)
-                q.push_back(n->esq);
+                q.push_back(n->esq); // insere n->esq na fila se não estiver vazio
             if (n->dir != NULL)
-                q.push_back(n->dir);
+                q.push_back(n->dir); // insere n->dir na fila se não estiver vazio
             cout << n->info << " ";
         }
         cout << endl;
@@ -109,7 +112,7 @@ int main()
             tInsere(arvore, x);
     }
 
-    // Saida
+    //  Saida - Mostra a lista emNivel
     emNivel(arvore);
 
     // Apaga todos os nos e a propria arvore
