@@ -2,7 +2,7 @@
 #include <cstring>
 
 using namespace std;
-
+                // texto / padrao / tamanho padrao
 void calcula_LPS(int lps[], char P[], int tamP)
 {
 	// tamanho do maior prefixo que tambem eh sufixo anterior
@@ -17,7 +17,7 @@ void calcula_LPS(int lps[], char P[], int tamP)
         if (P[i] == P[tam]) // se encontrar uma letra que bate tanto como prefixo quanto como sufixo
 		{
             tam++; // aumento o tamanho do maior prefixo que tambem eh sufixo
-            lps[i] = tam; // salvo o valor para esse prefixo
+            lps[i] = tam; // salvo o valor para esse prefixo (que vai virar um contador)
             i++; // vou para o proximo prefixo
         } 
         else // (p[i] != p[tam]) se encontrar uma letra que nao bate como prefixo e sufixo
