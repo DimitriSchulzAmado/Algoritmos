@@ -123,7 +123,7 @@ int main()
 
   // ENTRADA DOS NOS NA ARVORE
   cin >> node;
-  while (x != 0)
+  while (node != 0)
   {
     tInsere(arvore, node);
     cin >> node;
