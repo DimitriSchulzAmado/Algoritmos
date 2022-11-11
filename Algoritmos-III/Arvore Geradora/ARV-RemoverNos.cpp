@@ -61,18 +61,6 @@ void emNivel(treenodeptr t)
   }
 }
 
-// DELETA A ARVORE POR INTEIRO
-void tDestruir(treenodeptr &arvore)
-{
-  if (arvore != NULL)
-  {
-    tDestruir(arvore->esq);
-    tDestruir(arvore->dir);
-    delete arvore;
-  }
-  arvore = NULL;
-}
-
 treenodeptr tMenor(treenodeptr &raiz)
 {
   treenodeptr t;
@@ -90,12 +78,12 @@ treenodeptr tMenor(treenodeptr &raiz)
 int tRemove(treenodeptr &raiz, int x)
 {
   treenodeptr p;
-  if (raiz == NULL) // Ã¡rvore vazia
+  if (raiz == NULL) // Arvore vazia (nao consegui remover o no
     return 1;
   if (x == raiz->info)
   {
     p = raiz;
-    if (raiz->esq == NULL) // a raiz nao tem filho esquerdo
+    if (raiz->esq == NULL) // A raiz nao tem filho esquerdo
       raiz = raiz->dir;
     else if (raiz->dir == NULL) // a raiz nao tem filho direito
       raiz = raiz->esq;
@@ -114,19 +102,31 @@ int tRemove(treenodeptr &raiz, int x)
     return tRemove(raiz->dir, x);
 }
 
+// DELETA A ARVORE POR INTEIRO
+void tDestruir(treenodeptr &arvore)
+{
+  if (arvore != NULL)
+  {
+    tDestruir(arvore->esq);
+    tDestruir(arvore->dir);
+    delete arvore;
+  }
+  arvore = NULL;
+}
+
 int main()
 {
   treenodeptr arvore = NULL; // ponteiro para a raiz
-  int rem; // no removido
-  int x; // valores para ons nós
+  int rem; // no que eu quero remover
+  int node; // valores para os nós
   int aux;
 
   // ENTRADA DOS NOS NA ARVORE
-  cin >> x;
+  cin >> node;
   while (x != 0)
   {
-    tInsere(arvore, x);
-    cin >> x;
+    tInsere(arvore, node);
+    cin >> node;
   }
   // REMOVENDO O NO DESEJADO
   cin >> rem;
@@ -139,7 +139,7 @@ int main()
   emOrdem(arvore);
 
   // Apaga todos os nos e a propria arvore
-    tDestruir(arvore);
+  tDestruir(arvore);
 
   return 0;
 }
