@@ -78,6 +78,7 @@ int main(){
 
     cin.getline(T, 100);
     cin.getline(P, 100);
+    
     kmp(T, P,strlen(T),strlen(P));
     
     return 0;
