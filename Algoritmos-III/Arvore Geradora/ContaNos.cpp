@@ -39,21 +39,24 @@ void contaPreOrdem (treenodeptr arvore, int &n)
 
 int contaNos(treenodeptr arvore)
 {
-	int n = 0; // conta os nós
+	int n = 0; // conta os nï¿½s
 	contaPreOrdem(arvore, n);
 	return n; // retorna a quantidade de nos	
 }
 
 int main
 {
-    treenodeptr arvore = NULL; // ponteiro para a raiz da árvore
+    treenodeptr arvore = NULL; // ponteiro para a raiz da ï¿½rvore
     int n;
-    
-    tInsere(arvore, 12);
-	tInsere(arvore, 9);
-	tInsere(arvore, 20);
-	tInsere(arvore, 7);
-	tInsere(arvore, 10);
+    int x;
+
+    cin >> x;
+    while (x != -1)
+    {
+        if(x != -1)
+            tInsere(arvore, x);
+        cin >> x;
+    }
 	
 	n = contaNos(arvore);
 	
