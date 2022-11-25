@@ -81,7 +81,7 @@ int main()
     cout << soma << endl;
     
     // Apaga todos os nos e a propria arvore
-    tDestruir(arvore);
+    tDestruir(tree);
 
     return 0;
 }
