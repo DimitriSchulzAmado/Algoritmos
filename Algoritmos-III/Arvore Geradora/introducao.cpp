@@ -11,36 +11,6 @@ struct treenode
 
 typedef treenode *treenodeptr; // define um novo tipo de variavel
 
-/*
-int main
-{
-    treenodeptr arvore = NULL; //ponteiro para a raiz da árvore
-    int x;
-
-    x=14;
-    arvore = new treenode; // arvore aponta para o nó criado
-    arvore->info = x;
-    arvore->esq = NULL;
-    arvore->dir = NULL;
-
-    x = 15;
-    arvore->dir = new treenode;
-    (arvore->dir)->info = x;
-    (arvore->dir)->esq = NULL;
-    (arvore->dir)->dir = NULL;
-
-    x = 4;
-    arvore->esq = new treenode;
-    (arvore->esq)->info = x;
-    (arvore->esq)->esq = NULL;
-    (arvore->esq)->dir = NULL;
-
-    cout << arvore->info << endl;
-    cout << arvore->esq->info << endl;
-    cout << arvore->dir->info << endl;
-
-    return 0;
-} */
 
 void tInsere(treenodeptr &p, int x)
 {
