@@ -44,23 +44,40 @@ int contaNos(treenodeptr arvore)
 	return n; // retorna a quantidade de nos	
 }
 
+// DELETA A ARVORE POR INTEIRO
+void tDestruir (treenodeptr &tree)
+{
+	if (tree != NULL)
+	{
+		tDestruir(tree->esq);
+		tDestruir(tree->dir);
+		delete tree;
+	}
+	tree = NULL;
+}
+
 int main
 {
-    treenodeptr arvore = NULL; // ponteiro para a raiz da �rvore
+    treenodeptr tree = NULL; // ponteiro para a raiz da �rvore
     int n;
     int x;
 
+    // Entrada dos nós da árvore
     cin >> x;
-    while (x != -1)
+    while(x != -1)
     {
         if(x != -1)
-            tInsere(arvore, x);
+            tInsere(tree, x);
         cin >> x;
     }
+    contaPreOrdem (tree, n);
+	n = contaNos(tree);
 	
-	n = contaNos(arvore);
+    // Saindo com a quantidade de nós inseridos na árvore
+	cout << n << " elementos inseridos" << endl;
 	
-	cout << n << "elementos inseridos" << endl;
-	
+    // Apaga todos os nos e a propria arvore
+    tDestruir(tree);
+
     return 0;
 }
