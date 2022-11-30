@@ -1,3 +1,20 @@
+/*
+Faça um programa que insira vários números em uma árvore, e depois verifique qual a soma dos elementos da árvore em nível.
+
+Entrada
+Na primeira linha da entrada serão fornecidos vários números, que deverão ser inseridos na lista até que seja lido o número -1.
+
+Saída
+O programa deve informar a soma desses números.
+
+
+Exemplo de entrada     
+8 3 10 14 6 4 13 7 -1
+
+Exemplo de saída     
+soma = 65
+*/
+
 #include<iostream>
 #include<list>
 using namespace std;
@@ -78,7 +95,7 @@ int main()
     emNivel(tree, soma);
 
     // Soma dos valores percorridos em nivel
-    cout << soma << endl;
+    cout << "soma = " << soma << endl;
     
     // Apaga todos os nos e a propria arvore
     tDestruir(tree);

@@ -1,3 +1,26 @@
+/*
+Faça um programa que leia vários números inteiros e os insira em uma árvore binária.
+
+Depois o programa deve ler um inteiro x e remover todos os nós cujo campo info seja igual a x, e mostrar os elementos restantes, em ordem crescente.
+
+Entrada
+A entrada consiste de duas linhas:
+
+- a primeira linha tem vários números inteiros, que devem ser ineridos na árvore. Esta linha termina com o número 0, que não deve ser inserido na árvore
+
+- a segunda linha tem o valor de x
+
+Saída
+Após remover os nós cujo campo info é igual a x, o programa deve mostrar os nós restantes, em ordem crescente, como no exemplo abaixo.
+
+Exemplo de entrada     
+10 7 4 2 4 5 0
+4
+
+Exemplo de saída     
+2 5 7 10
+*/
+
 #include <iostream>
 #include <list>
 using namespace std;
