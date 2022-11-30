@@ -60,7 +60,7 @@ int main
 	
 	n = contaNos(arvore);
 	
-	cout << n << "elementos inseridos"
+	cout << n << "elementos inseridos" << endl;
 	
     return 0;
 }

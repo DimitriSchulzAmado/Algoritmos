@@ -1,3 +1,20 @@
+/*
+Faça um programa que insira vários números em uma árvore, e depois mostre o percurso em nível. Não se esqueça de liberar a memória utilizada pela árvore.
+
+Entrada
+Na primeira linha da entrada serão fornecidos vários números, que deverão ser inseridos na lista até que seja lido o número -1.
+
+Saída
+O programa deve mostrar o percurso em nível.
+
+
+Exemplo de entrada     
+8 3 10 14 6 4 13 7 1 -1
+
+Exemplo de saída     
+8 3 10 1 6 14 4 7 13
+*/
+
 #include <iostream>
 #include <list>
 using namespace std;
