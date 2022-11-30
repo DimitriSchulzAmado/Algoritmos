@@ -1,3 +1,24 @@
+/*
+Faça um programa que insira vários números em uma árvore, e depois verifique qual a média dos elementos da árvore.
+
+A média deve ser calculada através de uma função com o seguinte cabeçalho:
+
+    float media(treenodeptr arvore)
+
+Entrada
+Na primeira linha da entrada serão fornecidos vários números, que deverão ser inseridos na lista até que seja lido o número -1.
+
+Saída
+O programa deve informar a média com 2 casas de precisão.
+
+
+Exemplo de entrada     
+8 3 10 14 6 4 13 7 1 -1
+
+Exemplo de saída     
+Media: 7.33
+*/
+
 #include <iostream>
 #include <iomanip>
 using namespace std;
@@ -11,6 +32,18 @@ struct treenode
 };
 
 typedef treenode *treenodeptr;
+
+// DELETA A ARVORE POR INTEIRO
+void tDestruir (treenodeptr &arvore)
+{
+	if (arvore != NULL)
+	{
+		tDestruir(arvore->esq);
+		tDestruir(arvore->dir);
+		delete arvore;
+	}
+	arvore = NULL;
+}
 
 // INSERE OS NOS NA ARVORE
 void tInsere(treenodeptr &p, int x)
@@ -50,18 +83,6 @@ float media(treenodeptr arvore)
     PreOrdem(arvore, sum, i);
     media = sum / i;
     return media;
-}
-
-// DELETA A ARVORE POR INTEIRO
-void tDestruir (treenodeptr &arvore)
-{
-	if (arvore != NULL)
-	{
-		tDestruir(arvore->esq);
-		tDestruir(arvore->dir);
-		delete arvore;
-	}
-	arvore = NULL;
 }
 
 int main()

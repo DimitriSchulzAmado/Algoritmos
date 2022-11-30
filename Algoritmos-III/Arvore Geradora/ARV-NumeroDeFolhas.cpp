@@ -1,3 +1,25 @@
+/*
+Faça um programa,que dado uma árvore,diga quantas folhas essa árvore possui.
+
+As folhas devem ser contadas através da função:
+
+    int contaFolhas(treenodeptr arvore)
+
+Entrada
+Haverá N números a serem inseridos na árvore, até que a entrada seja -1.
+
+Saída
+A saída deve conter o número de folhas da árvore.
+
+
+Exemplo de entrada   
+10 7 15 2 8 12 20 3 -1
+
+Exemplo de saída     
+4
+
+*/
+
 #include <iostream>
 using namespace std;
 

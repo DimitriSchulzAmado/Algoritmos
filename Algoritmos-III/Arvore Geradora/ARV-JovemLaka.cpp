@@ -1,3 +1,33 @@
+/*
+Jovem Laka é um pirata que adora sair nesse mundão atrás de baús.Porém,esses baús não possuem ouro,possuem chocolates.Talento era o nome do pai de Laka e,antes de morrer,Talento disse para Laka que todos os mapas de chocolate possuem um padrão.Cada número representa uma cidade.Quando esse número é inserido em uma árvore,é possível verificar qual o melhor caminho para se chegar ao tesouro que está na cidade X. Laka sempre sabe a cidade onde está o chocolate,portanto,faça um programa que depois de fornecido as cidades,você diga ao jovem Laka qual o melhor caminho.
+
+Entrada
+Haverá N(1<=N=100) números,que representam as cidades e devem ser inseridos na árvore, até que a entrada seja -1.
+
+Após isso,será fornecido um número que representa a cidade X,a cidade em que está o chocolate.
+
+Saída
+A saída deve conter "Pre","Em" ou "Pos",que representa qual é o caminho mais rápido(PreOrdem,EmOrdem ou PosOrdem).Considere que não haverá empate.
+
+
+Exemplo de entrada     
+10 7 15 2 8 12 20 3 -1
+8
+
+Exemplo de saída     
+Pos
+
+
+No exemplo acima os percursos mostrariam as cidades nas seguintes ordens:
+PreOrdem: 10 7 2 3 8 15 12 20
+
+EmOrdem: 2 3 7 8 10 12 15 20
+
+PosOrdem: 3 2 8 7 12 20 15 10
+
+Repare que a resposta é Pos,pois o caminho mais rápido até a cidade informada é usando PosOrdem.
+*/
+
 #include <iostream>
 using namespace std;
 
