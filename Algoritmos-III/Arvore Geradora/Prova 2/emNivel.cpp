@@ -3,30 +3,30 @@ Objetivo deste exercício avaliativo: verificar se o aluno sabe usar o percurso 
 
 Faça um programa que leia vários números inteiros e os insira em uma árvore binária. Depois, faça uma alteração na função que implementa o percurso em nível para calcular a média dos elementos inseridos na árvore. A sua função alterada deve ter o seguinte cabeçalho:
 
-float calcMedia(treenodeptr arvore)
+    float calcMedia(treenodeptr arvore)
 
 
 A função que implementa o percurso em nível é mostrada abaixo:
 
-void emNivel(treenodeptr t)
-{
-    list<treenodeptr> q; // fila auxiliar
-    treenodeptr n = t; // ponteiro para varrer a árvore
-    if (t != NULL)
+    void emNivel(treenodeptr t)
     {
-        q.push_front(n);
-        while (!q.empty())
+        list<treenodeptr> q; // fila auxiliar
+        treenodeptr n = t; // ponteiro para varrer a árvore
+        if (t != NULL)
         {
-            n = q.front();
-            q.pop_front();
-            if (n->esq != NULL)
-                q.push_back(n->esq);
-            if (n->dir != NULL)
-                q.push_back(n->dir);
-            cout << n->info << " " << endl;
+            q.push_front(n);
+            while (!q.empty())
+            {
+                n = q.front();
+                q.pop_front();
+                if (n->esq != NULL)
+                    q.push_back(n->esq);
+                if (n->dir != NULL)
+                    q.push_back(n->dir);
+                cout << n->info << " " << endl;
+            }
         }
     }
-}
 
 Entrada
 
@@ -58,6 +58,18 @@ struct treenode
 };
 
 typedef treenode *treenodeptr;
+
+// DELETA A ARVORE POR INTEIRO
+void tDestruir(treenodeptr &arvore)
+{
+    if (arvore != NULL)
+    {
+        tDestruir(arvore->esq);
+        tDestruir(arvore->dir);
+        delete arvore;
+    }
+    arvore = NULL;
+}
 
 // INSERE OS NOS DA ARVORE
 void tInsere(treenodeptr &p, int x)
@@ -105,17 +117,47 @@ float calcMedia(treenodeptr arvore, double &soma, int &contador)
     return media;
 }
 
-// DELETA A ARVORE POR INTEIRO
-void tDestruir(treenodeptr &arvore)
+// Outro jeito de fazer a média
+
+/*
+float calcMedia(treenodeptr arvore)
 {
+
+    treenodeptr n;
+    list<treenodeptr> q;
+    float media = 0;
+    float contador = 0;
+    float soma = 0;
+
     if (arvore != NULL)
     {
-        tDestruir(arvore->esq);
-        tDestruir(arvore->dir);
-        delete arvore;
+        q.push_back(arvore);
+
+        while (!q.empty())
+        {
+            n = *q.begin();
+            q.pop_front();
+
+            contador++;
+
+            if (n->esq != NULL)
+            {
+                q.push_back(n->esq);
+            }
+
+            if (n->dir != NULL)
+            {
+                q.push_back(n->dir);
+            }
+
+            soma += n->info;
+        }
     }
-    arvore = NULL;
+    media = soma / contador;
+
+    return media;
 }
+*/
 
 int main()
 {
