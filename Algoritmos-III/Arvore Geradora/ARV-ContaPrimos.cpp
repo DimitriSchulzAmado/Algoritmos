@@ -1,3 +1,27 @@
+/*
+Faça um programa que vá lendo e inserindo vários números em uma árvore.
+
+Depois faça uma função que varra esta árvore e mostre quantos elementos inseridos são primos. O cabeçalho desta função deve ser:
+
+    int contaPrimos(treenodeptr arvore)
+
+Finalmente, o programa deve fazer uso desta função para motrar a quantidade de números primos inseridos na árvore.
+
+Entrada
+A entrada consiste de uma única linha com vários números positivos. Esta termina com o número -1, que não deverá ser inserido na árvore.
+
+Saída
+Na saída, o programa deve mostrar a quantidade de números primos presentes na árvore.
+
+
+Exemplo de entrada     
+10 7 15 2 8 12 20 3 -1
+
+Exemplo de saída
+3 numeros primos
+
+*/
+
 #include <iostream>
 using namespace std;
 
